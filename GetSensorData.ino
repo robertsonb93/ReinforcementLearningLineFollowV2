@@ -7,7 +7,7 @@
  //-1 implies that no line is found
 
 
-void GetSensorData(int frontLine, int backLine)
+void GetSensorData(int& frontLine, int& backLine)
 {
   ReadSensors();
   
@@ -17,7 +17,7 @@ void GetSensorData(int frontLine, int backLine)
   int numBack = 0;
   //Establish if two lines vary by the threshold amount
   //If there is a difference, mark it. 
-  for(int i= 0;i<7;i++)
+  for(int i= 0;i<8;i++)
     {
       if(abs(F_SENSOR[i] - F_SENSOR[i+1])>= THRESHOLD)
         {

@@ -8,11 +8,13 @@ void UpdateQTable()
  
  //Find best Q(s',a')
  GetMove(currLeft,currRight); //This is going to update the left and Rights
- int bestPrime = qTable[currFront][currBack][currLeft][currRight];
-
+ int bestPrime = qTable[currBack][currFront][currLeft][currRight];
+ 
  //Update Q Value
- qTable[oldFront][oldBack][oldLeft][oldRight] += alpha*(rwrd + gamma*bestPrime-qTable[oldFront][oldBack][oldLeft][oldRight]);
+// qTable[oldBack][oldFront][oldLeft][oldRight] += alpha*(rwrd + gamma*bestPrime-qTable[oldBack][oldFront][oldLeft][oldRight]);
   //Update teh oldFront and Back for next iteration
  oldFront = currFront;
  oldBack  = currBack;
+
+ 
 }
